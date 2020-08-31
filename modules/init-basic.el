@@ -43,4 +43,15 @@
 ;; 高亮当前行
 (global-hl-line-mode 1)
 
+;; 设置 *scratch* 缓冲区的默认内容
+(setq initial-scratch-message
+";; Logic Emacs.
+;; Use C-x C-f to open a file.
+
+")
+
+;; 自动移动光标至新创建的窗口
+(require 'popwin)
+(popwin-mode 1)
+
 (provide 'init-basic)

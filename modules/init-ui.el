@@ -1,7 +1,7 @@
 ;;;; init-ui.el -- Logic Emacs
 
 ;; 主题设置
-(load-theme 'monokai 1)
+(load-theme 'atom-one-dark t)
 
 ;; 关闭工具栏
 (tool-bar-mode -1)
@@ -27,5 +27,7 @@
 ;; 关闭启动帮助画面
 (setq inhibit-splash-screen 1)
 (setq inhibit-startup-message t)
+
+
 
 (provide 'init-ui)

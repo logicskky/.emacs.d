@@ -20,6 +20,7 @@
     org
 	company
 	hungry-delete
+	popwin
 ;;    treemacs
 	;; Ivy
 	swiper
@@ -27,10 +28,11 @@
 	;; Other
 	exec-path-from-shell
 	;; UI
-	monokai-theme
+    atom-one-dark-theme
 	doom-modeline
 	all-the-icons
 	all-the-icons-dired
+	all-the-icons-ivy
 	) "Default packages")
 
 (setq package-selected-packages logic-package-list)
