@@ -19,10 +19,10 @@
 	use-package
     org
 	company
+	which-key
 	hungry-delete
 	popwin
 ;;    treemacs
-	;; Ivy
 	swiper
 	counsel
 	;; Other

@@ -19,7 +19,7 @@
 (setq-default cursor-type 'box)
 
 ;; 设置背景半透明
-(set-frame-parameter nil 'alpha '(90 .100))
+;;(set-frame-parameter nil 'alpha '(90 .100))
 
 ;; 显示行号
 (global-linum-mode 1)
@@ -27,7 +27,5 @@
 ;; 关闭启动帮助画面
 (setq inhibit-splash-screen 1)
 (setq inhibit-startup-message t)
-
-
 
 (provide 'init-ui)

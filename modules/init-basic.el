@@ -1,5 +1,8 @@
 ;;;; init-basic.el -- Logic Emacs
 
+;; 设置文本编码为 UTF-8
+(set-language-environment "UTF-8")
+
 ;; 设置用户目录
 (setq user-emacs-directory "~/.emacs.d/var/")
 
@@ -18,9 +21,9 @@
 ;; 关闭警告音
 (setq ring-bell-function 'ignore)
 
-;; 制表符
-(setq-default indent-tabs-mode -1)
-(setq-default tab-width 4)
+;; Tab
+(setq-default indent-tabs-mode nil)  ; Tab 转换为空格
+(setq default-tab-width 4)           ; 设置 Tab 为 4 个空格的宽度
 
 ;; 自动加载外部修改过的文件
 (global-auto-revert-mode 1)
@@ -37,6 +40,14 @@
 ;; 自动括号匹配
 (show-paren-mode 1)
 
+;; 光标在括号内时就高亮周围两个括号
+(define-advice show-paren-function (:around (fn) fix-show-paren-function)
+    "Highlight enclosing parens."
+    (cond ((looking-at-p "\\s(") (funcall fn))
+	    (t (save-excursion
+	        (ignore-errors (backward-up-list))
+	        (funcall fn)))))
+
 ;; 选中一段文字之后输入一个字符会替换掉选中的文字
 (delete-selection-mode 1)
 
@@ -50,8 +61,15 @@
 
 ")
 
-;; 自动移动光标至新创建的窗口
+;; popwin
 (require 'popwin)
 (popwin-mode 1)
+
+;; 自动删除 Windows 系统下的 ^M 换行符
+(defun remove-dos-eol ()
+  "Replace DOS eolns CR LF with Unix eolns CR"
+  (interactive)
+  (goto-char (point-min))
+  (while (search-forward "\r" nil t) (replace-match "")))
 
 (provide 'init-basic)
