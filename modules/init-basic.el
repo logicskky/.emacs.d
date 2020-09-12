@@ -1,5 +1,3 @@
-;;;; init-basic.el -- Logic Emacs
-
 ;; 设置文本编码为 UTF-8
 (set-language-environment "UTF-8")
 

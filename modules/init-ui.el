@@ -1,5 +1,3 @@
-;;;; init-ui.el -- Logic Emacs
-
 ;; 主题设置
 (load-theme 'atom-one-dark t)
 
