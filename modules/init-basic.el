@@ -6,6 +6,7 @@
 
 ;; 设置recentf文件保存路径
 (setq recentf-save-file "~/.emacs.d/var/recentf")
+
 ;; 设置自动保存文件的路径
 (setq auto-save-list-file-prefix "~/.emacs.d/var/auto-save-list/saves-")
 
@@ -40,11 +41,11 @@
 
 ;; 光标在括号内时就高亮周围两个括号
 (define-advice show-paren-function (:around (fn) fix-show-paren-function)
-    "Highlight enclosing parens."
-    (cond ((looking-at-p "\\s(") (funcall fn))
-	    (t (save-excursion
-	        (ignore-errors (backward-up-list))
-	        (funcall fn)))))
+  "Highlight enclosing parens."
+  (cond ((looking-at-p "\\s(") (funcall fn))
+	(t (save-excursion
+	     (ignore-errors (backward-up-list))
+	     (funcall fn)))))
 
 ;; 选中一段文字之后输入一个字符会替换掉选中的文字
 (delete-selection-mode 1)
@@ -54,8 +55,7 @@
 
 ;; 设置 *scratch* 缓冲区的默认内容
 (setq initial-scratch-message
-";; Logic Emacs.
-;; Use C-x C-f to open a file.
+";; Use C-x C-f to open a file.
 
 ")
 

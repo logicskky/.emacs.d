@@ -3,13 +3,13 @@
 
 ;; all-the-icons-ivy
 (use-package all-the-icons-ivy
-    :init (add-hook 'after-init-hook 'all-the-icons-ivy-setup))
+  :init (add-hook 'after-init-hook 'all-the-icons-ivy-setup))
 (setq all-the-icons-ivy-file-commands
       '(counsel-find-file counsel-file-jump counsel-recentf counsel-projectile-find-file counsel-projectile-find-dir))
 
 ;; all-the-icons-dired
 (use-package all-the-icons-dired
-    :init (add-hook 'dired-mode-hook 'all-the-icons-dired-mode))
+  :init (add-hook 'dired-mode-hook 'all-the-icons-dired-mode))
 
 ;;; dired-mode
 ;; 让 dired 只用唯一的一个缓冲区
@@ -17,13 +17,13 @@
 
 ;; 延迟加载
 (with-eval-after-load 'dired
-    (define-key dired-mode-map (kbd "RET") 'dired-find-alternate-file))
+  (define-key dired-mode-map (kbd "RET") 'dired-find-alternate-file))
 
 ;;; doom-modeline
 (use-package doom-modeline
-    :ensure t
-    :defer t
-    :hook (after-init . doom-modeline-init))
+  :ensure t
+  :defer t
+  :hook (after-init . doom-modeline-init))
 
 ;;;; EAF
 ;;; all apps
@@ -32,7 +32,7 @@
 (eaf-setq eaf-browser-dark-mode "true")
 (eaf-setq eaf-terminal-dark-mode "true")
 (eaf-setq eaf-mindmap-dark-mode "true")
-(eaf-setq eaf-pdf-dark-mode "true")  ; maybe 'ignore'
+(eaf-setq eaf-pdf-dark-mode "ignore")
 
 ;;; browser
 
